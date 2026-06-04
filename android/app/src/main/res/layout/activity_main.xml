@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1a1a2e"
+    android:keepScreenOn="true">
+
+    <!-- TOP BAR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/ipInput"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:hint="PC IP"
+            android:textColor="#ffffff"
+            android:textColorHint="#888888"
+            android:background="#333355"
+            android:paddingHorizontal="8dp"
+            android:textSize="13sp"
+            android:inputType="text"/>
+
+        <Button
+            android:id="@+id/connectBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Connect"
+            android:textSize="12sp"
+            android:layout_marginStart="6dp"/>
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not connected"
+            android:textColor="#aaaaaa"
+            android:textSize="11sp"
+            android:layout_marginStart="6dp"/>
+    </LinearLayout>
+
+    <!-- LEFT SIDE: JOYSTICK -->
+    <FrameLayout
+        android:id="@+id/joystickBase"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="20dp"
+        android:background="@drawable/circle_bg">
+
+        <View
+            android:id="@+id/joystickKnob"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:background="@drawable/knob_bg"/>
+    </FrameLayout>
+
+    <!-- LEFT SIDE TOP: extra buttons -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
+
+        <Button android:id="@+id/btnMap" android:layout_width="60dp" android:layout_height="40dp" android:text="M\nMap" android:textSize="10sp" android:background="#333388" android:textColor="#ffffff" android:layout_marginBottom="6dp"/>
+        <Button android:id="@+id/btnInventory" android:layout_width="60dp" android:layout_height="40dp" android:text="I\nBag" android:textSize="10sp" android:background="#333388" android:textColor="#ffffff" android:layout_marginBottom="6dp"/>
+        <Button android:id="@+id/btnChat" android:layout_width="60dp" android:layout_height="40dp" android:text="T\nChat" android:textSize="10sp" android:background="#333388" android:textColor="#ffffff"/>
+    </LinearLayout>
+
+    <!-- RIGHT SIDE: ACTION BUTTONS -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
+            <Button android:id="@+id/btnSmoke" android:layout_width="55dp" android:layout_height="55dp" android:text="Q\nSmoke" android:textSize="9sp" android:background="#553300" android:textColor="#ffffff" android:layout_marginEnd="6dp"/>
+            <Button android:id="@+id/btnFlash" android:layout_width="55dp" android:layout_height="55dp" android:text="E\nFlash" android:textSize="9sp" android:background="#553300" android:textColor="#ffffff" android:layout_marginEnd="6dp"/>
+            <Button android:id="@+id/btnGrenade" android:layout_width="55dp" android:layout_height="55dp" android:text="G\nGrenade" android:textSize="9sp" android:background="#553300" android:textColor="#ffffff"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
+            <Button android:id="@+id/btnReload" android:layout_width="55dp" android:layout_height="55dp" android:text="R\nReload" android:textSize="9sp" android:background="#335533" android:textColor="#ffffff" android:layout_marginEnd="6dp"/>
+            <Button android:id="@+id/btnPickup" android:layout_width="55dp" android:layout_height="55dp" android:text="F\nPickup" android:textSize="9sp" android:background="#335533" android:textColor="#ffffff" android:layout_marginEnd="6dp"/>
+            <Button android:id="@+id/btnBoost" android:layout_width="55dp" android:layout_height="55dp" android:text="B\nBoost" android:textSize="9sp" android:background="#335533" android:textColor="#ffffff"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+            <Button android:id="@+id/btnJump" android:layout_width="55dp" android:layout_height="55dp" android:text="Space\nJump" android:textSize="9sp" android:background="#884400" android:textColor="#ffffff" android:layout_marginEnd="6dp"/>
+            <Button android:id="@+id/btnCrouch" android:layout_width="55dp" android:layout_height="55dp" android:text="C\nCrouch" android:textSize="9sp" android:background="#884400" android:textColor="#ffffff" android:layout_marginEnd="6dp"/>
+            <Button android:id="@+id/btnProne" android:layout_width="55dp" android:layout_height="55dp" android:text="Z\nProne" android:textSize="9sp" android:background="#884400" android:textColor="#ffffff"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- SHOOT & AIM - center right -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+
+        <Button android:id="@+id/btnShoot" android:layout_width="75dp" android:layout_height="75dp" android:text="SHOOT" android:textSize="11sp" android:background="#cc0000" android:textColor="#ffffff" android:layout_marginBottom="10dp"/>
+        <Button android:id="@+id/btnAim" android:layout_width="75dp" android:layout_height="75dp" android:text="AIM" android:textSize="11sp" android:background="#0055cc" android:textColor="#ffffff"/>
+    </LinearLayout>
+
+    <!-- CENTER BOTTOM: Shift, Alt, Slot3, Melee, Vehicle -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btnShift" android:layout_width="55dp" android:layout_height="45dp" android:text="Shift" android:textSize="10sp" android:background="#444466" android:textColor="#ffffff" android:layout_marginEnd="6dp"/>
+        <Button android:id="@+id/btnAlt" android:layout_width="55dp" android:layout_height="45dp" android:text="Alt" android:textSize="10sp" android:background="#444466" android:textColor="#ffffff" android:layout_marginEnd="6dp"/>
+        <Button android:id="@+id/btnSlot3" android:layout_width="55dp" android:layout_height="45dp" android:text="3\nSlot" android:textSize="10sp" android:background="#444466" android:textColor="#ffffff" android:layout_marginEnd="6dp"/>
+        <Button android:id="@+id/btnMelee" android:layout_width="55dp" android:layout_height="45dp" android:text="4\nMelee" android:textSize="10sp" android:background="#444466" android:textColor="#ffffff" android:layout_marginEnd="6dp"/>
+        <Button android:id="@+id/btnVehicle" android:layout_width="55dp" android:layout_height="45dp" android:text="V\nVehicle" android:textSize="10sp" android:background="#444466" android:textColor="#ffffff"/>
+    </LinearLayout>
+
+</FrameLayout>
